@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Golu ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Arial,sans-serif;background:linear-gradient(135deg,#ffd6e8,#e8d7ff);display:flex;justify-content:center;align-items:center;overflow:hidden;color:#4a2948}
+.card{width:90%;max-width:430px;background:rgba(255,255,255,.9);padding:30px 24px;border-radius:28px;text-align:center;box-shadow:0 15px 40px rgba(120,60,120,.18);position:relative;z-index:2}
+h1{font-size:28px;margin-bottom:12px}h2{font-size:23px}p{font-size:16px;line-height:1.7}.emoji{font-size:55px;animation:bounce 1.5s infinite}
+button{border:none;padding:13px 22px;border-radius:30px;font-size:15px;cursor:pointer;margin:8px 4px;transition:.3s;font-weight:bold}
+.primary{background:#ff6fae;color:white}.secondary{background:#f1d7e7;color:#6d365b}button:hover{transform:scale(1.08)}
+.hidden{display:none}.heart{position:absolute;bottom:-30px;font-size:22px;animation:float 7s linear infinite;opacity:.7}
+@keyframes float{from{transform:translateY(0) rotate(0);opacity:0}20%{opacity:.8}to{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.small{font-size:13px;opacity:.7;margin-top:18px}#response{margin-top:15px;font-weight:bold;color:#d84d91}
+</style>
+</head>
+<body>
+<div class="card">
+  <div id="surprise">
+    <div class="emoji">🎁</div>
+    <h1>Golu, ek surprise hai 👀</h1>
+    <p>Ek chhota sa surprise hai tumhare liye...<br>Pehle button dabao, phir pata chalega 😌❤️</p>
+    <button class="primary" onclick="showSorry()">Open Surprise ✨</button>
+  </div>
+  <div id="sorry" class="hidden">
+    <div class="emoji">🥺❤️</div>
+    <h2>Golu, I’m Sorry 🫶</h2>
+    <p>Main tumhe time nahi de paa raha, aur mujhe pata hai ki tumhe bura lagta hoga.<br><br>
+    Tum mere liye important ho. Main sirf sorry bolkar nahi, apne actions se bhi better karne ki koshish karunga. ❤️</p>
+    <p>Ab gussa thoda kam kar do na, meri Golu? 🥹😂</p>
+    <button class="primary" onclick="acceptSorry()">Sorry Accept Kar Liya ❤️</button>
+    <button class="secondary" onclick="stillAngry()">Abhi Bhi Gussa Hoon 😤</button>
+    <div id="response"></div>
+    <p class="small">P.S. — Tumhari smile bahut important hai 😌❤️</p>
+  </div>
+</div>
+<script>
+function showSorry(){document.getElementById("surprise").classList.add("hidden");document.getElementById("sorry").classList.remove("hidden")}
+function acceptSorry(){document.getElementById("response").innerHTML="Yessss! 🎉 Golu ne maaf kar diya! ❤️<br>Ab is ladke ko time dena bhi seekhna padega 😤😂"}
+function stillAngry(){document.getElementById("response").innerHTML="Accha baba 🥺❤️<br>Gussa valid hai... par ek chhota sa smile kar do na? 🥹😂"}
+const hearts=["❤️","💗","💕","✨","🥺"];
+for(let i=0;i<18;i++){const heart=document.createElement("div");heart.className="heart";heart.innerHTML=hearts[Math.floor(Math.random()*hearts.length)];heart.style.left=Math.random()*100+"vw";heart.style.animationDuration=5+Math.random()*5+"s";heart.style.animationDelay=Math.random()*5+"s";document.body.appendChild(heart)}
+</script>
+</body>
+</html>
